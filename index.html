@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>简迹 - 隐私政策</title>
+    <title>简迹 - 隐私政策 / Privacy Policy / プライバシーポリシー</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -34,9 +34,44 @@
             border-left: 4px solid #FF9F5A;
             margin: 20px 0;
         }
+        /* 语言切换按钮 */
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .lang-switch button {
+            font-size: 14px;
+            padding: 6px 16px;
+            border: 1px solid #FF9F5A;
+            border-radius: 999px;
+            background: #fff;
+            color: #FF9F5A;
+            cursor: pointer;
+            transition: all .15s ease;
+        }
+        .lang-switch button:hover {
+            background: #FFF3E8;
+        }
+        .lang-switch button.active {
+            background: #FF9F5A;
+            color: #fff;
+        }
+        .lang { display: none; }
+        .lang.visible { display: block; }
     </style>
 </head>
 <body>
+
+<div class="lang-switch">
+    <button id="btn-zh" onclick="setLang('zh')">简体中文</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+    <button id="btn-ja" onclick="setLang('ja')">日本語</button>
+</div>
+
+<!-- ==================== 简体中文 ==================== -->
+<div class="lang visible" id="lang-zh">
     <h1>简迹 - 隐私政策</h1>
     <p><strong>生效日期：</strong>2026年4月30日</p>
     <p><strong>最近更新日期：</strong>2026年9月29日（2.0 版：新增情绪记录与健康数据相关说明）</p>
@@ -183,5 +218,326 @@
         <p><strong>🔐 总结</strong><br>
         简迹是一款真正尊重隐私的应用。你的笔记、心情和健康数据只存在于你的设备上，由你完全控制。我们不收集、不上传、不分享任何信息。选择简迹，就是选择隐私和安全。</p>
     </div>
+</div>
+
+<!-- ==================== English ==================== -->
+<div class="lang" id="lang-en">
+    <h1>Jianji - Privacy Policy</h1>
+    <p><strong>Effective Date:</strong> April 30, 2026</p>
+    <p><strong>Last Updated:</strong> September 29, 2026 (Version 2.0: added sections on mood entries and health data)</p>
+
+    <div class="highlight">
+        <p><strong>🔒 Our Privacy Commitment</strong><br>
+        Jianji is a mood journal and note-taking app built with privacy at its core. Your data belongs to you alone: it is stored entirely on your device and is never uploaded to any server.</p>
+    </div>
+
+    <h2>1. Data Storage and Processing</h2>
+    <p><strong>1.1 Local Storage</strong><br>
+    This app uses a fully local storage architecture. All notes, mood entries, health data snapshots, and insights are stored on your device and are never uploaded to any cloud server.</p>
+
+    <p><strong>1.2 What We Store</strong><br>
+    The app processes and stores the following data (locally only):</p>
+    <ul>
+        <li>Notes you create (titles and body text)</li>
+        <li>AI-generated tags and topic classifications</li>
+        <li>Sentiment analysis results</li>
+        <li><strong>Mood entries</strong>: the mood emoji you select, the "not sure" marker, optional notes, and record time (added in 2.0)</li>
+        <li><strong>Health data snapshots</strong>: sleep duration, step count, and average heart rate (read only after your authorization; see Section 3)</li>
+        <li><strong>Insights</strong>: summaries of your mood patterns computed entirely on your device (added in 2.0)</li>
+        <li>Creation, modification, and archive timestamps of notes</li>
+        <li>App settings and preferences</li>
+    </ul>
+
+    <p><strong>1.3 Local Event Log</strong><br>
+    To improve product quality, the app keeps a small anonymous log of feature usage events locally (e.g., "completed a mood entry"). This log is stored on your device only, is used solely for quality analysis, is <strong>never uploaded</strong>, and is permanently removed when you uninstall the app.</p>
+
+    <h2>2. Biometric Authentication</h2>
+    <p><strong>2.1 Face ID / Touch ID</strong><br>
+    The app offers an optional biometric lock to protect your private notes.</p>
+
+    <p><strong>2.2 Biometric Data Handling</strong></p>
+    <ul>
+        <li>Biometric authentication is provided natively by the system (Apple Face ID / Touch ID)</li>
+        <li>The app <strong>does not collect, store, or transmit</strong> your biometric data</li>
+        <li>Biometric verification is performed entirely within the device's secure enclave</li>
+        <li>The app receives only the verification result (success/failure) and never touches raw biometric data</li>
+    </ul>
+
+    <h2>3. Health Data (HealthKit)</h2>
+    <p><strong>3.1 What We Read</strong><br>
+    With your explicit authorization, the app reads the following three types of data via Apple HealthKit:</p>
+    <ul>
+        <li>Sleep duration (sleep analysis)</li>
+        <li>Step count</li>
+        <li>Average heart rate</li>
+    </ul>
+
+    <p><strong>3.2 Purpose</strong><br>
+    Health data is used solely for on-device correlation analysis between your body and your mood — for example, discovering patterns like "you feel calmer on days you sleep well" (the "Discoveries" and "Your body is talking" features).</p>
+
+    <p><strong>3.3 Health Data Commitments</strong></p>
+    <ul>
+        <li>Health data is <strong>stored only on your device</strong> and never uploaded to any server</li>
+        <li>The app <strong>never writes</strong> to your health data; it requests read-only access</li>
+        <li>Health data is never used for advertising, marketing, or any purpose other than those described above</li>
+        <li>You can revoke authorization anytime in iOS Settings → Jianji; the app will stop reading immediately</li>
+        <li>Due to Apple's privacy design, we cannot and do not know which specific data types you have authorized</li>
+    </ul>
+
+    <h2>4. PIN Protection</h2>
+    <p><strong>4.1 PIN Storage</strong><br>
+    If you choose to set a PIN:</p>
+    <ul>
+        <li>The PIN is encrypted and stored locally on your device (in the system Keychain)</li>
+        <li>It is never uploaded to any server</li>
+        <li>A forgotten PIN can be reset via biometric authentication</li>
+    </ul>
+
+    <h2>5. Information We Do Not Collect</h2>
+    <p><strong>This app does not collect:</strong></p>
+    <ul>
+        <li>Personally identifiable information (name, phone number, email, etc.)</li>
+        <li>Device information (model, OS version, unique identifiers, etc.)</li>
+        <li>Location data</li>
+        <li>System data such as contacts or photos</li>
+        <li>Any behavioral data uploaded to a server</li>
+    </ul>
+
+    <h2>6. Third-Party Services</h2>
+    <p>This app <strong>does not integrate</strong> any third-party services:</p>
+    <ul>
+        <li>❌ No third-party analytics SDKs</li>
+        <li>❌ No advertising SDKs</li>
+        <li>❌ No third-party login services</li>
+        <li>❌ No cloud-based analytics or tracking</li>
+        <li>❌ No information sharing with any third party</li>
+    </ul>
+
+    <h2>7. Data Security</h2>
+    <p><strong>7.1 Security Measures</strong></p>
+    <ul>
+        <li>All data is stored in the app's local sandbox on your device</li>
+        <li>Sensitive notes can be protected with biometric authentication or a PIN</li>
+        <li>The app relies on iOS system-level security mechanisms</li>
+    </ul>
+
+    <p><strong>7.2 Data Deletion</strong><br>
+    You can delete your data at any time:</p>
+    <ul>
+        <li>Delete a single note or mood entry (notes go to the Trash and are permanently deleted after 30 days)</li>
+        <li>Empty the Trash (immediate permanent deletion)</li>
+        <li>Uninstall the app (all local data is removed)</li>
+    </ul>
+
+    <h2>8. Data Backup and Restore</h2>
+    <p><strong>8.1 Local Backup</strong><br>
+    The app provides a JSON-format local backup feature:</p>
+    <ul>
+        <li>Backup files are stored on your device</li>
+        <li>You may optionally save backups to iCloud Drive (requires system permission)</li>
+        <li>Backup files are fully under your control</li>
+    </ul>
+
+    <p><strong>8.2 iCloud Backup (Optional)</strong><br>
+    If you have enabled system-level iCloud Backup, app data may be included in your iCloud backups. This is controlled by your system settings; the app itself never uploads data proactively.</p>
+
+    <h2>9. Children's Privacy</h2>
+    <p>This app is suitable for users of all ages. Because the app collects no personal information whatsoever, there is no risk of children's privacy being compromised. Parents can let their children use it with confidence.</p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. The updated policy will be published within the app, and we encourage you to review it periodically.</p>
+    <p>For significant changes, we will remind you to review the updated policy when the app is updated.</p>
+
+    <h2>11. Your Rights</h2>
+    <p>You have full control over your data:</p>
+    <ul>
+        <li>✅ View all your data anytime (notes, mood entries, health snapshots)</li>
+        <li>✅ Edit or delete any note or mood entry anytime</li>
+        <li>✅ Export your data anytime</li>
+        <li>✅ Enable or disable health data authorization in system settings anytime</li>
+        <li>✅ Delete the app and its data anytime</li>
+        <li>✅ Enable or disable biometric protection anytime</li>
+    </ul>
+
+    <h2>12. Contact Us</h2>
+    <p>If you have any questions, suggestions, or complaints about this privacy policy, please contact us:</p>
+    <p>📧 Email: <a href="mailto:1095541577@qq.com">1095541577@qq.com</a></p>
+    <p>We will respond to your email within a reasonable time.</p>
+
+    <div class="highlight">
+        <p><strong>🔐 In Summary</strong><br>
+        Jianji is an app that truly respects your privacy. Your notes, moods, and health data exist only on your device, fully under your control. We collect nothing, upload nothing, and share nothing. Choosing Jianji means choosing privacy and safety.</p>
+    </div>
+</div>
+
+<!-- ==================== 日本語 ==================== -->
+<div class="lang" id="lang-ja">
+    <h1>簡跡 - プライバシーポリシー</h1>
+    <p><strong>発効日：</strong>2026年4月30日</p>
+    <p><strong>最終更新日：</strong>2026年9月29日（バージョン2.0：気分記録と健康データに関する説明を追加）</p>
+
+    <div class="highlight">
+        <p><strong>🔒 プライバシーへの取り組み</strong><br>
+        簡跡は、プライバシーを最優先に設計された気分日記・ノートアプリです。あなたのデータはあなただけのものであり、完全に端末内に保存され、サーバーへアップロードされることは決してありません。</p>
+    </div>
+
+    <h2>1. データの保存と処理</h2>
+    <p><strong>1.1 ローカル保存</strong><br>
+    本アプリは完全なローカルストレージ方式を採用しています。すべてのノート、気分記録、健康データのスナップショット、洞察結果はあなたの端末内にのみ保存され、クラウドサーバーへアップロードされることはありません。</p>
+
+    <p><strong>1.2 保存されるデータ</strong><br>
+    アプリが処理・保存するデータは以下のとおりです（すべて端末内のみ）：</p>
+    <ul>
+        <li>作成したノートの内容（タイトル、本文）</li>
+        <li>AI が生成するタグとトピック分類</li>
+        <li>感情分析の結果</li>
+        <li><strong>気分記録</strong>：選択した気分の絵文字、「よくわからない」マーク、任意のメモ、記録時刻（2.0 で追加）</li>
+        <li><strong>健康データのスナップショット</strong>：睡眠時間、歩数、平均心拍数（ご本人の許可後にのみ読み取り。第3節参照）</li>
+        <li><strong>洞察結果</strong>：上記のデータを端末内で計算して生成した気分の傾向まとめ（2.0 で追加）</li>
+        <li>ノートの作成・編集・アーカイブの日時</li>
+        <li>アプリの設定と環境設定</li>
+    </ul>
+
+    <p><strong>1.3 ローカルイベントログ</strong><br>
+    品質向上のため、アプリは「気分記録を完了した」などの匿名かつ少量の機能利用イベントを端末内に記録します。このログは端末内にのみ保存され、品質分析にのみ使用され、<strong>アップロードされることはありません</strong>。アプリを削除すると完全に消去されます。</p>
+
+    <h2>2. 生体認証機能</h2>
+    <p><strong>2.1 Face ID / Touch ID</strong><br>
+    本アプリは、プライベートなノートを保護するためのオプションの生体認証ロックを提供しています。</p>
+
+    <p><strong>2.2 生体データの扱い</strong></p>
+    <ul>
+        <li>生体認証はシステム（Apple Face ID / Touch ID）がネイティブに提供します</li>
+        <li>アプリは生体特徴データを<strong>収集・保存・送信しません</strong></li>
+        <li>生体認証の検証は端末のセキュアエンクレーブ内で完結します</li>
+        <li>アプリが受け取るのは検証結果（成功/失敗）のみで、生体データそのものには一切触れません</li>
+    </ul>
+
+    <h2>3. 健康データ（HealthKit）</h2>
+    <p><strong>3.1 読み取るデータ</strong><br>
+    ご本人が明示的に許可した場合に限り、アプリは Apple HealthKit を通じて以下の3種類のデータを読み取ります：</p>
+    <ul>
+        <li>睡眠時間（睡眠分析）</li>
+        <li>歩数</li>
+        <li>平均心拍数</li>
+    </ul>
+
+    <p><strong>3.2 利用目的</strong><br>
+    読み取った健康データは、あなたの端末内でのみ、体と気分の相関分析に使用されます。例：「よく眠れた日は気分も穏やか」という法則の発見（「簡跡の発見」「体が話している」機能）。</p>
+
+    <p><strong>3.3 健康データに関する約束</strong></p>
+    <ul>
+        <li>健康データは<strong>あなたの端末内にのみ保存され</strong>、サーバーへアップロードされることはありません</li>
+        <li>アプリは健康データを<strong>書き込みません</strong>。読み取り専用の権限のみを要求します</li>
+        <li>健康データは広告、マーケティング、上記以外の目的には使用されません</li>
+        <li>iOS の「設定 → 簡跡」からいつでも許可を解除でき、解除後は読み取りを停止します</li>
+        <li>Apple のプライバシー設計により、当社はどのデータの許可がなされたかを知ることができません</li>
+    </ul>
+
+    <h2>4. PIN コード保護</h2>
+    <p><strong>4.1 PIN コードの保存</strong><br>
+    PIN コードを設定した場合：</p>
+    <ul>
+        <li>PIN コードは暗号化され、端末内（システムキーチェーン）にのみ保存されます</li>
+        <li>サーバーへアップロードされることはありません</li>
+        <li>PIN コードを忘れた場合は、生体認証でリセットできます</li>
+    </ul>
+
+    <h2>5. 収集しない情報</h2>
+    <p><strong>本アプリは以下の情報を収集しません：</strong></p>
+    <ul>
+        <li>個人を特定できる情報（氏名、電話番号、メールアドレスなど）</li>
+        <li>デバイス情報（機種、OS バージョン、固有識別子など）</li>
+        <li>位置情報</li>
+        <li>連絡先、写真などのシステムデータ</li>
+        <li>サーバーへアップロードされる行動データ全般</li>
+    </ul>
+
+    <h2>6. 第三者サービス</h2>
+    <p>本アプリは<strong>いかなる第三者サービスにも接続していません</strong>：</p>
+    <ul>
+        <li>❌ 第三者の統計 SDK なし</li>
+        <li>❌ 広告 SDK なし</li>
+        <li>❌ 第三者ログインサービスなし</li>
+        <li>❌ クラウド分析・トラッキングなし</li>
+        <li>❌ 第三者との情報共有なし</li>
+    </ul>
+
+    <h2>7. データのセキュリティ</h2>
+    <p><strong>7.1 安全対策</strong></p>
+    <ul>
+        <li>すべてのデータは端末内のアプリ Sandbox に保存されます</li>
+        <li>機密ノートは生体認証または PIN コードで暗号的に保護できます</li>
+        <li>アプリは iOS のシステムレベルのセキュリティ機構を利用しています</li>
+    </ul>
+
+    <p><strong>7.2 データの削除</strong><br>
+    データはいつでも以下の方法で削除できます：</p>
+    <ul>
+        <li>個別のノートや気分記録の削除（ノートはゴミ箱に入り、30日後に完全削除）</li>
+        <li>ゴミ箱の空（即時・完全削除）</li>
+        <li>アプリの削除（すべてのローカルデータが消去されます）</li>
+    </ul>
+
+    <h2>8. データのバックアップと復元</h2>
+    <p><strong>8.1 ローカルバックアップ</strong><br>
+    アプリは JSON 形式のローカルバックアップ機能を提供しています：</p>
+    <ul>
+        <li>バックアップファイルはあなたの端末上に保存されます</li>
+        <li>オプションで iCloud Drive への保存が可能です（システムの許可が必要）</li>
+        <li>バックアップファイルはあなたが完全に管理します</li>
+    </ul>
+
+    <p><strong>8.2 iCloud バックアップ（オプション）</strong><br>
+    システムレベルの iCloud バックアップを有効にしている場合、アプリのデータが iCloud バックアップに含まれることがあります。これはシステム設定によって制御されるもので、アプリ自身がデータをアップロードすることはありません。</p>
+
+    <h2>9. 子どものプライバシー</h2>
+    <p>本アプリはすべての年齢の方がご利用いただけます。個人情報を一切収集しないため、子どものプライバシーが侵害されるリスクはありません。保護者の方も安心してお使いいただけます。</p>
+
+    <h2>10. ポリシーの更新</h2>
+    <p>本プライバシーポリシーは随時更新される場合があります。更新後のポリシーはアプリ内で公開されますので、定期的にご確認ください。</p>
+    <p>重要な変更がある場合は、アプリの更新時に新しいプライバシーポリシーの確認をお願いします。</p>
+
+    <h2>11. あなたの権利</h2>
+    <p>あなたは自分のデータを完全に管理できます：</p>
+    <ul>
+        <li>✅ すべてのデータ（ノート、気分記録、健康データのスナップショット）をいつでも閲覧</li>
+        <li>✅ いつでもノートや気分記録を編集・削除</li>
+        <li>✅ いつでもデータをエクスポート</li>
+        <li>✅ いつでもシステム設定で健康データの許可をオン/オフ</li>
+        <li>✅ いつでもアプリとデータを削除</li>
+        <li>✅ いつでも生体認証保護をオン/オフ</li>
+    </ul>
+
+    <h2>12. お問い合わせ</h2>
+    <p>本プライバシーポリシーについてご質問・ご意見・ご苦情がある場合は、以下までお問い合わせください：</p>
+    <p>📧 メール：<a href="mailto:1095541577@qq.com">1095541577@qq.com</a></p>
+    <p>合理的な期間内にご返信いたします。</p>
+
+    <div class="highlight">
+        <p><strong>🔐 まとめ</strong><br>
+        簡跡は、プライバシーを本当に尊重するアプリです。あなたのノート、気分、健康データはすべてあなたの端末の中にだけ存在し、あなたが完全に管理します。私たちは何も収集せず、何もアップロードせず、何も共有しません。簡跡を選ぶことは、プライバシーと安心を選ぶことです。</p>
+    </div>
+</div>
+
+<script>
+    function setLang(lang) {
+        ['zh', 'en', 'ja'].forEach(function (l) {
+            document.getElementById('lang-' + l).classList.toggle('visible', l === lang);
+            document.getElementById('btn-' + l).classList.toggle('active', l === lang);
+        });
+        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'ja' ? 'ja' : 'en');
+        try { localStorage.setItem('jianji-privacy-lang', lang); } catch (e) {}
+    }
+    // 首次打开按浏览器语言自动选择
+    (function () {
+        var saved = null;
+        try { saved = localStorage.getItem('jianji-privacy-lang'); } catch (e) {}
+        var nav = (navigator.language || 'zh').toLowerCase();
+        var lang = saved || (nav.indexOf('ja') === 0 ? 'ja' : (nav.indexOf('zh') === 0 ? 'zh' : 'en'));
+        setLang(lang);
+    })();
+</script>
+
 </body>
 </html>
